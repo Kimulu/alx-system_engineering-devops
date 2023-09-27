@@ -1,2 +1,3 @@
 #!/bin/bash
-./new_file2
+cd ..
+pwd
