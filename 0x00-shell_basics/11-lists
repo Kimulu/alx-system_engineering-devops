@@ -1,2 +1,2 @@
 #!/bin/bash
-./my_file
+./tmp/my_file
