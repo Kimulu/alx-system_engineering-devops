@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
+# Define a function to display the message.
 
-
-# Define a function to display the message
 display_message() {
     echo "To infinity and beyond"
 }
