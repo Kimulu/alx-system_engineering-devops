@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
-
-# Get the PID of the current script
+# Get the PID of the current script.
 script_pid=$$
-
 # Find processes whose name contains the word "bash"
+
 for pid in /proc/*/cmdline; do
     if grep -q "bash" "$pid"; then
         # Extract the process ID from the path
@@ -16,4 +15,3 @@ for pid in /proc/*/cmdline; do
         fi
     fi
 done
-
