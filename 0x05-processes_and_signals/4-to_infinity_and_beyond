@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+
+# Define a function to display the message
+display_message() {
+    echo "To infinity and beyond"
+}
+
+# Run an infinite loop
+while true; do
+    display_message
+    sleep 2
+done
