@@ -3,7 +3,7 @@
 # Description: This script accepts one argument and checks if it matches a specific pattern
 # The regular expression matches strings that start with "h", followed by an optional "t", then "btn".
 
-regex = /h.?btn/
+regex = /hb?t?n/
 
 input_string = ARGV[0]
 
