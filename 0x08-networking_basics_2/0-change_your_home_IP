@@ -1,14 +1,10 @@
 #!/usr/bin/env bash
-# Check if running as root
-
-if [ "$(id -u)" != "0" ]; then
-    echo "This script must be run as root" 1>&2
-    exit 1
-fi
+# Configures an Ubuntu server to be:
+# - facebook.com resolves to 8.8.8.8
+# - localhost resolves to 127.0.0.2
 
 # Update /etc/hosts
-echo "127.0.0.2 localhost" | sudo tee -a /etc/hosts > /dev/null
-echo "8.8.8.8 facebook.com" | sudo tee -a /etc/hosts > /dev/null
-
-# Inform user
-echo "Hosts file updated successfully"
+cp /etc/hosts ~/hosts.new
+echo "127.0.0.2		localhost" > ~/hosts.new
+echo "8.8.8.8		facebook.com" >> ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
