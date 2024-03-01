@@ -1,7 +1,4 @@
-#!/bin/bash
-# Extract IPv4 addresses using 'ip addr show' command
+#!/usr/bin/env bash
+# Displays all IPv4 addresses on the computer.
 
-ipv4_addresses=$(ip addr show | grep -oE '\b([0-9]{1,3}\.){3}[0-9]{1,3}\b' | grep -vE '^127\.')
-
-# Display the IPv4 addresses
-echo "$ipv4_addresses"
+ifconfig | grep -Eo "inet (addr:)?([0-9]*\.){3}[0-9]*" | cut -b 11-
