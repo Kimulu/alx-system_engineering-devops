@@ -1,12 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Displays listening ports. Includes listening sockets as well
+# + as the PID and name of the program to which each socket belongs.
 
-# Display active Internet connections (only servers)
-echo "Active Internet connections (only servers)"
-echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
-sudo netstat -tuln | grep 'LISTEN'
-
-# Display active UNIX domain sockets (only servers)
-echo "Active UNIX domain sockets (only servers)"
-echo "Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path"
-sudo netstat -xpl | grep 'LISTEN'
-
+netstat -l --program
